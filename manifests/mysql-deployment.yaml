@@ -60,15 +60,15 @@ spec:
         # MYSQL_DATABASE | MYSQL_USER
         ##
         - name: MYSQL_DATABASE
-            valueFrom:
-              configMapKeyRef:
-                name: wordpress-mysql
-                key: database
-          - name: MYSQL_USER
-            valueFrom:
-              configMapKeyRef:
-                name: wordpress-mysql
-                key: user
+          valueFrom:
+            configMapKeyRef:
+              name: wordpress-mysql
+              key: database
+        - name: MYSQL_USER
+          valueFrom:
+            configMapKeyRef:
+              name: wordpress-mysql
+              key: user
         ##
         # mount sensitive environment vars from secret
         # MYSQL_ROOT_PASSWORD | MYSQL_PASSWORD
